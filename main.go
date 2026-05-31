@@ -5,11 +5,12 @@ import "fmt"
 func main() {
 	// Entry point for the grade calculator
 
-	fmt.Println("Student Grade Calculator is running...")
+	fmt.Println("Student Grade Calculator")
 
-	// Next steps:
-	// - take input from user
-	// - calculate grades
-	// - display results
-	fmt.Println("Ready to calculate student grades soon!")
+	var subjectCount int
+
+	fmt.Print("Enter number of subjects: ")
+	fmt.Scanln(&subjectCount)
+
+	fmt.Println("You entered:", subjectCount)
 }
