@@ -13,11 +13,14 @@ func main() {
 	total := calculateTotal(scores)
 	average := float64(total) / float64(subjectCount)
 	grade := getGrade(average)
+	status, remark := getRemark(average)
 
 	fmt.Println("----- Result -----")
 	fmt.Println("Total:", total)
 	fmt.Println("Average:", average)
 	fmt.Println("Grade:", grade)
+	fmt.Println("Status:", status)
+	fmt.Println("Remark:", remark)
 }
 
 // Gets number of subjects from user
@@ -61,4 +64,12 @@ func getGrade(average float64) string {
 		return "D"
 	}
 	return "F"
+}
+
+// Adds pass/fail status and remark
+func getRemark(average float64) (string, string) {
+	if average >= 50 {
+		return "PASS", "Good performance"
+	}
+	return "FAIL", "Needs improvement"
 }
